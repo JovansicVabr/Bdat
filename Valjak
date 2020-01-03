@@ -1,0 +1,205 @@
+using System;
+
+namespace Valjak
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+                int b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+                string a1, a2, a3, a4, a5, a6;
+                double B = 0, M = 0, P, H = 0, V, r = 0, Ob = 0, Oo = 0, Up, Pp;
+                Console.WriteLine("Sta imas poznato:");
+                Console.WriteLine("1)Baza, \n2)Omotac, \n3)Visina, \n4)Poluprecnik, \n5)Obim baze, \n6)Obim omotaca,");
+                a1 = Console.ReadLine();
+                a2 = Console.ReadLine();
+                a3 = Console.ReadLine();
+                a4 = Console.ReadLine();
+                a5 = Console.ReadLine();
+                a6 = Console.ReadLine();
+                Int32.TryParse(a1, out b1);
+                Int32.TryParse(a2, out b2);
+                Int32.TryParse(a3, out b3);
+                Int32.TryParse(a4, out b4);
+                Int32.TryParse(a5, out b5);
+                Int32.TryParse(a6, out b6);
+                //-------------------------------------------------------------------------------------------
+                if (b1 == 1 || b2 == 1 || b3 == 1 || b4 == 1 || b5 == 1 || b6 == 1)
+                {
+                    Console.WriteLine("Unesi bazu: ");
+                    B = double.Parse(Console.ReadLine());
+                }
+                if (b1 == 2 || b2 == 2 || b3 == 2 || b4 == 2 || b5 == 2 || b6 == 2)
+                {
+                    Console.WriteLine("Unesi omotac: ");
+                    M = double.Parse(Console.ReadLine());
+                }
+                if (b1 == 3 || b2 == 3 || b3 == 3 || b4 == 3 || b5 == 3 || b6 == 3)
+                {
+                    Console.WriteLine("Unesi visinu: ");
+                    H = double.Parse(Console.ReadLine());
+                }
+                if (b1 == 4 || b2 == 4 || b3 == 4 || b4 == 4 || b5 == 4 || b6 == 4)
+                {
+                    Console.WriteLine("Unesi poluprecnik: ");
+                    r = double.Parse(Console.ReadLine());
+                }
+                if (b1 == 5 || b2 == 5 || b3 == 5 || b4 == 5 || b5 == 5 || b6 == 5)
+                {
+                    Console.WriteLine("Unesi obim baze: ");
+                    Ob = double.Parse(Console.ReadLine());
+                }
+                if (b1 == 6 || b2 == 6 || b3 == 6 || b4 == 6 || b5 == 6 || b6 == 6)
+                {
+                    Console.WriteLine("Unesi Obim omotaca: ");
+                    Oo = double.Parse(Console.ReadLine());
+                }
+                //------------------------------------------------------------------------------------------
+                if (b1 == 1 || b2 == 1 || b3 == 1 || b4 == 1 || b5 == 1 || b6 == 1)
+                {
+                    if (b1 == 2 || b2 == 2 || b3 == 2 || b4 == 2 || b5 == 2 || b6 == 2)
+                    {
+                        r = Math.Sqrt(B / 3.14);
+                        H = M / (2 * r * 3.14);
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                    else if (b1 == 3 || b2 == 3 || b3 == 3 || b4 == 3 || b5 == 3 || b6 == 3)
+                    {
+                        r = Math.Sqrt(B / 3.14);
+                        M = 2 * r * 3.14 * H;
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                    else if (b1 == 6 || b2 == 6 || b3 == 6 || b4 == 6 || b5 == 6 || b6 == 6)
+                    {
+                        r = Math.Sqrt(B / 3.14);
+                        H = (Oo - 2 * 2 * r * 3.14) / 2;
+                        M = 2 * r * 3.14 * H;
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                }
+                else if (b1 == 2 || b2 == 2 || b3 == 2 || b4 == 2 || b5 == 2 || b6 == 2)
+                {
+                   if (b1 == 3 || b2 == 3 || b3 == 3 || b4 == 3 || b5 == 3 || b6 == 3)
+                    {
+                        r = (M / H) / 6.28;
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                    else if (b1 == 4 || b2 == 4 || b3 == 4 || b4 == 4 || b5 == 4 || b6 == 4)
+                    {
+                        H = M / (2 * r * 3.14);
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                    else if (b1 == 5 || b2 == 5 || b3 == 5 || b4 == 5 || b5 == 5 || b6 == 5)
+                    {
+                        r = Ob / 6.28;
+                        H = M / (2 * r * 3.14);
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                }
+                else if (b1 == 3 || b2 == 3 || b3 == 3 || b4 == 3 || b5 == 3 || b6 == 3)
+                {
+                    if (b1 == 4 || b2 == 4 || b3 == 4 || b4 == 4 || b5 == 4 || b6 == 4)
+                    {
+                        B = r * r * 3.14;
+                        M = (r * 2 * 3.14) * H;
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                    else if (b1 == 5 || b2 == 5 || b3 == 5 || b4 == 5 || b5 == 5 || b6 == 5)
+                    {
+                        r = Ob / 6.28;
+                        B = r * r * 3.14;
+                        M = H * (2 * r * 3.14);
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                    if (b1 == 6 || b2 == 6 || b3 == 6 || b4 == 6 || b5 == 6 || b6 == 6)
+                    {
+                        r = (Oo-(2*H))/ 12.56;
+                        B = r * r * 3.14;
+                        M = 2 * 3.14 * r * H;
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                }
+                else if (b1 == 4 || b2 == 4 || b3 == 4 || b4 == 4 || b5 == 4 || b6 == 4)
+                {
+                    if (b1 == 6 || b2 == 6 || b3 == 6 || b4 == 6 || b5 == 6 || b6 == 6)
+                    {
+                        H = (Oo / (2*( r * 3.14))) / 2;
+                        B = (r * r )* 3.14;
+                        P = 2 * B + M;
+                        V = B * H;
+                        Up = 2 * r * H;
+                        Pp = B;
+                        Console.WriteLine("Povrsina je:" + P);
+                        Console.WriteLine("Zapremina je:" + V);
+                        Console.WriteLine("Uzduzni presjek je:" + Up);
+                        Console.WriteLine("Poprecni presjek je:" + Pp);
+                    }
+                }
+            }
+        }
+    }
+}
