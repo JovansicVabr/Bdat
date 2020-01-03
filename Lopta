@@ -1,0 +1,45 @@
+using System;
+
+namespace Lopta
+{
+   class Program
+    {
+        static void Main(string[] args)
+        {
+            int b1 = 0, b2 = 0;
+            string a1, a2;
+            double Povrsina = 0, Zapremina = 0, Zapremina_odsjecka = 0, Poprecni_presjek = 0, Zapremina_isjecka = 0, r, h;
+            Console.WriteLine("Sta imas poznato:");
+            Console.WriteLine("1)Poluprecnik, \n2)Visina odsjecka");
+            a1 = Console.ReadLine();
+            a2 = Console.ReadLine();
+            Int32.TryParse(a1, out b1);
+            Int32.TryParse(a2, out b2);
+            //--------------------------------------------------------------------------
+            if (b1 == 1 || b2 == 1)
+            {
+                Console.WriteLine("Unesi poluprecnik lopte: ");
+                r = Convert.ToDouble(Console.ReadLine());
+                Povrsina = 4 * r * r * 3.14;
+                Zapremina = (4  * r * r * r * 3.14)/3;
+                Poprecni_presjek = r * r * 3.14;
+                if (b1 == 2 || b2 == 2)
+                {
+                    Console.WriteLine("Unesi visinu odsjecka: ");
+                    h = Convert.ToDouble(Console.ReadLine());
+                    Zapremina_odsjecka =(h* 3.14 * h * (3 * r - h))/3;
+                    Zapremina_isjecka = (2 * 3.4 * r * r * h)/3;
+                    Console.WriteLine("Zapremina odsjecka je: " + Zapremina_odsjecka);
+                    Console.WriteLine("Zapremina isjecka je: " + Zapremina_isjecka);
+                }
+                Console.WriteLine("Povrsina je: " + Povrsina);
+                Console.WriteLine("Zapremina je: " + Zapremina);
+                Console.WriteLine("Zapremina je: " + Poprecni_presjek);
+            }
+            else
+            {
+                Console.WriteLine("GRESKA! \nProvjerite da li ste unijeli podatke!");
+            }
+        }
+    }
+}
